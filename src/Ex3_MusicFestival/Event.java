@@ -1,5 +1,7 @@
 package Ex3_MusicFestival;
 
+import com.sun.java.accessibility.util.EventID;
+
 public abstract class Event {
 
     private static int lastEventID = 1000;
@@ -43,5 +45,9 @@ public abstract class Event {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public void PrintEvent(){
+        System.out.println("Event name: " + eventName + " Event ID: " + eventID + " Event Time: " + time + " Event Location: " + location );
     }
 }//end event
