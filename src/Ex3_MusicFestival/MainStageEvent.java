@@ -27,4 +27,9 @@ class MainStageEvent extends Event {
         System.out.println();
     }
 
+    public void PrintAllInfo(){
+        System.out.println("Name of Event/Performer: " + super.getEventName() + "  Event Type: " + super.getEventType() + "  Event Location: " + super.getLocation());
+        printTech();
+    }
+
 }

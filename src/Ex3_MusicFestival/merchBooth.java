@@ -11,7 +11,7 @@ class merchBooth extends NonMusicEvent{
 
     merchBooth (String name, String type, String loc,int com,int ns){
         super(name, type, loc);
-        commissionPct = com /100;
+        commissionPct = com;
         numSales = ns;
 
         allItems = new ArrayList<String>();
@@ -31,6 +31,14 @@ class merchBooth extends NonMusicEvent{
         for (int i = 0; i < allItems.size(); i++) {
             System.out.println(allItems.get(i));
         }
+    }
+
+    public void PrintAllInfo(){
+        System.out.println("Name of Booth: " + super.getEventName() + "  Event Type: " + super.getEventType() + "  Event Location: " + super.getLocation());
+        System.out.println("The items this booth is selling are:");
+        PrintList();
+        System.out.println("The commission that this booth is being charge per purchase is: " + commissionPct + "%");
+        System.out.println("The number of item this booth has sold is: " + numSales);
     }
 
     }//class

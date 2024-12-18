@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d347db3d-fdc9-4f1b-940f-de355116165b" name="Changes" comment="12/10 class - Ex2">
+    <list default="true" id="d347db3d-fdc9-4f1b-940f-de355116165b" name="Changes" comment="12/16 class - Folk Fest Assignment">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ex3_MusicFestival/Ex3_Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex3_MusicFestival/Ex3_Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ex3_MusicFestival/MainStageEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex3_MusicFestival/MainStageEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ex3_MusicFestival/NonMusicEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex3_MusicFestival/NonMusicEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ex3_MusicFestival/SmallStageEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex3_MusicFestival/SmallStageEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ex3_MusicFestival/merchBooth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex3_MusicFestival/merchBooth.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +39,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "F:/CompSci30_RT/Inheritance_RT",
+    "last_opened_file_path": "F:/CompSci30_RT/OOP_RT",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -89,7 +94,14 @@
       <option name="project" value="LOCAL" />
       <updated>1734028794705</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="12/16 class - Folk Fest Assignment">
+      <created>1734374246371</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1734374246371</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -106,6 +118,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="12/4 class - Ex1" />
     <MESSAGE value="12/10 class - Ex2" />
-    <option name="LAST_COMMIT_MESSAGE" value="12/10 class - Ex2" />
+    <MESSAGE value="12/16 class - Folk Fest Assignment" />
+    <option name="LAST_COMMIT_MESSAGE" value="12/16 class - Folk Fest Assignment" />
   </component>
 </project>

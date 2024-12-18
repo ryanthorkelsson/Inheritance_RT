@@ -16,9 +16,19 @@ class NonMusicEvent extends Event {
         this.rent = r;
     }
 
+    public void setTime(){
+        super.setTime("All day");
+    }
+
+    public void PrintAllInfo() {
+        setTime();
+        System.out.println("Name: " + super.getEventName() + "  Time: " + super.getTime() + " Location: " + super.getLocation());
+        System.out.println("This event is being charged $" + rent + " for renting their space");
+    }
 
 
 
 
 
-}
+
+}//class

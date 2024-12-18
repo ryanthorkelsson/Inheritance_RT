@@ -1,5 +1,7 @@
 package Ex3_MusicFestival;
 
+import com.sun.tools.javac.Main;
+
 import java.util.ArrayList;
 
 public class Ex3_Main {
@@ -15,6 +17,7 @@ public class Ex3_Main {
         allEvents.add(new MainStageEvent("Kendrick Lame R", "Music"));
         //NonMusicEvents
         allEvents.add(new NonMusicEvent("Curry Connection", "Food Truck","Truck 9"));
+        ((NonMusicEvent) allEvents.get(5)).setRent(50);
         allEvents.add(new merchBooth("Tony's T-Shirts", "Merch" , "Tent 4",5,100));
         allEvents.add(new merchBooth("Pleasant Pants","Merch","Tent 19",5,38));
         allEvents.add(new merchBooth("Happy Hoodies","Merch","Tent 6",9,99));
@@ -33,6 +36,7 @@ public class Ex3_Main {
 
 
         while (true) {
+            System.out.println();
             System.out.println("Choose from the following options.");
 
             System.out.println("1. Add new Event");
@@ -50,13 +54,27 @@ public class Ex3_Main {
                 String eventType = Library.input.nextLine();
 
                 if(eventType.contains("main")){
-                    System.out.println("What kind of perfomance is happening?");
+                    System.out.println("What kind of performance is happening?");
                     String kind = Library.input.nextLine();
                     System.out.println("What is the arist's / performer's name?");
                     String name = Library.input.nextLine();
+                    System.out.println("How many pieces of tech does the performance need?");
+                    int techNum = Library.input.nextInt();
+                    Library.input.nextLine();
+                    System.out.println("What kind of tech does this performance need?");
                     allEvents.add(new MainStageEvent(name,kind));
+                    for (int i = 0; i < techNum; i++) {
+                        String tech = Library.input.nextLine();
+                        ((MainStageEvent)allEvents.get(allEvents.size()-1)).addTech(tech);
+                    }
+
+
                 }
                 if(eventType.contains("small")){
+                    System.out.println("What kind of performance is happening?");
+                    String kind = Library.input.nextLine();
+                    System.out.println("What is the arist's / performer's name?");
+                    String name = Library.input.nextLine();
 
                 }
                 if(eventType.contains("merch")){
@@ -68,6 +86,34 @@ public class Ex3_Main {
 
             } else if (choice == 2) {
                 System.out.println("Search for Events");
+                System.out.println();
+                System.out.println("What Event (Performer / name) are you searching for?");
+                String findEvent = Library.input.nextLine();
+                int eventIndex = searchForEvent(allEvents,findEvent);
+
+                if(eventIndex != -1){
+
+                    if(allEvents.get(eventIndex) instanceof MainStageEvent){
+                        ((MainStageEvent) allEvents.get(eventIndex)).PrintAllInfo();
+                    }
+                    if(allEvents.get(eventIndex) instanceof SmallStageEvent){
+                        ((SmallStageEvent) allEvents.get(eventIndex)).PrintAllInfo();
+
+                    }
+                    if(allEvents.get(eventIndex) instanceof merchBooth){
+                        ((merchBooth) allEvents.get(eventIndex)).PrintAllInfo();
+                    }
+                    if(allEvents.get(eventIndex) instanceof NonMusicEvent){
+                        ((NonMusicEvent) allEvents.get(eventIndex)).PrintAllInfo();
+                    }
+
+                }
+                else{
+                    System.out.println("Can't find event. Try again later.");
+                }
+
+
+
             } else if (choice == 3) {
                 System.out.println("Filter by Type");
             } else if (choice == 4) {
@@ -79,4 +125,15 @@ public class Ex3_Main {
         System.out.println("Thank you. Please come again.");
 
     }//run
+
+
+    public static int searchForEvent (ArrayList<Event> list , String searchTerm){
+        for (int i = 0; i < list.size(); i++) {
+            if(searchTerm.equalsIgnoreCase(list.get(i).getEventName())){
+                return i;
+            }
+        }
+
+        return -1;
+    }
 }//Main
