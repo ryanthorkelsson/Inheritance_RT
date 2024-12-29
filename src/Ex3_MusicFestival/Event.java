@@ -50,4 +50,8 @@ public abstract class Event {
     public void PrintEvent(){
         System.out.println("Event name: " + eventName + " Event ID: " + eventID + " Event Time: " + time + " Event Location: " + location );
     }
+
+    public void test(){
+        System.out.println("true");
+    }
 }//end event
