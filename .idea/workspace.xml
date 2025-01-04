@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ef10928-6d27-49ca-b29d-c789a155e87d" name="Changes" comment="" />
+    <list default="true" id="9ef10928-6d27-49ca-b29d-c789a155e87d" name="Changes" comment="At home test">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ex3_MusicFestival/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex3_MusicFestival/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ex3_MusicFestival/Ex3_Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex3_MusicFestival/Ex3_Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,7 +25,7 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/ryanthorkelsson/Inheritance_RT&quot;,
+    &quot;url&quot;: &quot;https://github.com/ryanthorkelsson/Inheritance_RT.git&quot;,
     &quot;accountId&quot;: &quot;19ecc85f-8b2a-4a25-af1e-f3fe1947e359&quot;
   }
 }</component>
@@ -34,14 +38,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/ryant/IdeaProjects/Inheritance_RT/src/Main.java&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/ryant/IdeaProjects/Inheritance_RT",
+    "onboarding.tips.debug.path": "C:/Users/ryant/IdeaProjects/Inheritance_RT/src/Main.java"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -51,6 +58,15 @@
       <option name="presentableId" value="Default" />
       <updated>1735431520063</updated>
     </task>
+    <task id="LOCAL-00001" summary="At home test">
+      <option name="closed" value="true" />
+      <created>1735432759665</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1735432759665</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -75,5 +91,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="At home test" />
+    <option name="LAST_COMMIT_MESSAGE" value="At home test" />
   </component>
 </project>

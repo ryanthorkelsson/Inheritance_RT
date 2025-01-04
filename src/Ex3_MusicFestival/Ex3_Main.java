@@ -116,6 +116,32 @@ public class Ex3_Main {
 
             } else if (choice == 3) {
                 System.out.println("Filter by Type");
+                System.out.println("What kind of event would you like to see? (Main Stage, Small Stage, Food, Merchandise)");
+                String eType = Library.input.nextLine();
+                for (int i = 0; i < allEvents.size(); i++) {
+                    if(eType.contains("main")){
+                        if(allEvents.get(i) instanceof MainStageEvent){
+                            allEvents.get(i).PrintEvent();
+                        }
+                    }
+                    if(eType.contains("small")){
+                        if(allEvents.get(i) instanceof SmallStageEvent){
+                            allEvents.get(i).PrintEvent();
+                        }
+                    }
+                    if(eType.contains("merch")){
+                        if(allEvents.get(i) instanceof merchBooth){
+                            allEvents.get(i).PrintEvent();
+                        }
+                    }
+                    if(eType.contains("food")){
+                        if(allEvents.get(i) instanceof NonMusicEvent && !(allEvents.get(i) instanceof merchBooth)){
+                            allEvents.get(i).PrintEvent();
+                        }
+                    }
+                }
+                //if()
+
             } else if (choice == 4) {
                 break;
             }
