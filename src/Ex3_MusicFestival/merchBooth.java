@@ -22,9 +22,7 @@ class merchBooth extends NonMusicEvent{
         rent = rent + (rent * commissionPct);
     }
 
-    public void addItems() {
-        System.out.println("What Item would you like to add?");
-        String newItem = Library.input.nextLine();
+    public void addItems(String newItem) {
         allItems.add(newItem);
     }
     public void PrintList(){

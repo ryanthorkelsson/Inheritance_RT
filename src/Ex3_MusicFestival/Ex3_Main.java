@@ -42,7 +42,9 @@ public class Ex3_Main {
             System.out.println("1. Add new Event");
             System.out.println("2. Search For Events");
             System.out.println("3. Filter By Event Type");
-            System.out.println("4. exit.");
+            System.out.println("4. Print by type");
+            System.out.println("5. Add Tech for Main Stage Events");
+            System.out.println("6. exit.");
 
             int choice = Library.input.nextInt();
             Library.input.nextLine();
@@ -58,16 +60,7 @@ public class Ex3_Main {
                     String kind = Library.input.nextLine();
                     System.out.println("What is the arist's / performer's name?");
                     String name = Library.input.nextLine();
-                    System.out.println("How many pieces of tech does the performance need?");
-                    int techNum = Library.input.nextInt();
-                    Library.input.nextLine();
-                    System.out.println("What kind of tech does this performance need?");
                     allEvents.add(new MainStageEvent(name,kind));
-                    for (int i = 0; i < techNum; i++) {
-                        String tech = Library.input.nextLine();
-                        ((MainStageEvent)allEvents.get(allEvents.size()-1)).addTech(tech);
-                    }
-
 
                 }
                 if(eventType.contains("small")){
@@ -75,13 +68,56 @@ public class Ex3_Main {
                     String kind = Library.input.nextLine();
                     System.out.println("What is the arist's / performer's name?");
                     String name = Library.input.nextLine();
+                    System.out.println("What is the attendance capacity of this event?");
+                    int cap = Library.input.nextInt();
+                    Library.input.nextLine();
+                    System.out.println("How many attendees are going to be at this event?");
+                    int guests = Library.input.nextInt();
+                    Library.input.nextLine();
+                    allEvents.add(new SmallStageEvent(name,kind,cap,guests));
 
                 }
                 if(eventType.contains("merch")){
+                    System.out.println("WHat is the name of this merchandise booth?");
+                    String name = Library.input.nextLine();
+                    System.out.println("What tent number is this booth located?");
+                    String loc = Library.input.nextLine();
+                    System.out.println("What is the percent commission this booth being charged?");
+                    int com = Library.input.nextInt();
+                    Library.input.nextLine();
+                    System.out.println("How many items has this booth sold?");
+                    int ns = Library.input.nextInt();
+                    Library.input.nextLine();
+                    System.out.println("How many items are being sold here?");
+                    int numItems = Library.input.nextInt();
+                    Library.input.nextLine();
 
+                    allEvents.add(new merchBooth(name, "merch", loc, com, ns));
+
+                    int foundBooth = searchForEvent(allEvents, name);
+
+                    for (int i = 0; i <numItems ; i++) {
+                        System.out.println("What item would you like to sell?");
+                        String newItem = Library.input.nextLine();
+                        ((merchBooth) allEvents.get(foundBooth)).addItems(newItem);
+                    }
                 }
                 if(eventType.contains("non")){
+                    System.out.println("What is the name of this event?");
+                    String name = Library.input.nextLine();
+                    System.out.println("What kind of station / event is this?");
+                    String type = Library.input.nextLine();
+                    System.out.println("What is the location of this event?");
+                    String loc = Library.input.nextLine();
+                    System.out.println("What is this station being charged for rent?");
+                    int rent = Library.input.nextInt();
+                    Library.input.nextLine();
 
+                    allEvents.add(new NonMusicEvent(name,type,loc));
+                    int newNonMusic = searchForEvent(allEvents,name);
+
+                    ((NonMusicEvent) allEvents.get(newNonMusic)).setTime();
+                    ((NonMusicEvent) allEvents.get(newNonMusic)).setRent(rent);
                 }
 
             } else if (choice == 2) {
@@ -143,8 +179,61 @@ public class Ex3_Main {
                 //if()
 
             } else if (choice == 4) {
-                break;
+                System.out.println("Print events by type");
+
+                for (int i = 0; i < allEvents.size(); i++) {
+                    if(allEvents.get(i) instanceof NonMusicEvent){
+                        ((NonMusicEvent) allEvents.get(i)).PrintAllInfo();
+                    }
+                }
+                for (int i = 0; i < allEvents.size(); i++) {
+                    if(allEvents.get(i) instanceof MainStageEvent){
+                        ((MainStageEvent) allEvents.get(i)).PrintAllInfo();
+                    }
+                }
+                for (int i = 0; i < allEvents.size(); i++) {
+                    if(allEvents.get(i) instanceof SmallStageEvent){
+                        ((SmallStageEvent) allEvents.get(i)).PrintAllInfo();
+                    }
+                }
+
+
+
             }
+            else if (choice == 5) {
+                System.out.println("Add tech");
+                System.out.println();
+                System.out.println("What performance do you want to add tech to?");
+                String artistTech = Library.input.nextLine();
+                int artistIndex = searchForEvent(allEvents,artistTech);
+                if(artistIndex == -1){
+                    System.out.println("This performance can't be found. Try again later.");
+                }
+                if(artistIndex != -1){
+                    if(allEvents.get(artistIndex) instanceof MainStageEvent){
+                        System.out.println("How many pieces of tech would you like to add?");
+                        int techAdd = Library.input.nextInt();
+                        Library.input.nextLine();
+                        if(techAdd > 0){
+                            for (int i = 0; i < techAdd; i++) {
+                                System.out.println("What piece of tech would you like to add to this performance?");
+                                String newTech = Library.input.nextLine();
+                                ((MainStageEvent) allEvents.get(artistIndex)).addTech(newTech);
+                            }
+
+                        }
+                        else{
+                            System.out.println("Invalid number of tech pieces.");
+                        }
+                    }
+                    else{
+                        System.out.println("This is not a main stage event");
+                    }
+                }// artistIndex != -1
+            }// choice 5
+            else if (choice == 6) {
+                break;
+            }// choice 6
 
         } // while loop
 
