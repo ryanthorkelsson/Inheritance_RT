@@ -139,7 +139,7 @@ public class Ex3_Main {
                     if(allEvents.get(eventIndex) instanceof merchBooth){
                         ((merchBooth) allEvents.get(eventIndex)).PrintAllInfo();
                     }
-                    if(allEvents.get(eventIndex) instanceof NonMusicEvent){
+                    if(allEvents.get(eventIndex) instanceof NonMusicEvent && !(allEvents.get(eventIndex) instanceof merchBooth)){
                         ((NonMusicEvent) allEvents.get(eventIndex)).PrintAllInfo();
                     }
 
