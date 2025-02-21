@@ -68,27 +68,19 @@ public class As5_Vigenere {
     }//getChar
 
 
-    public static char[] decrypt(String cipherText, char[][] arr, String key) {
+    public static char[] decrypt(String codedMessage, char[][] arr, String key) {
 
-        char[] keyWord = key.toCharArray();
-        char[] textArr = cipherText.toCharArray();
-        char[] n = new char[textArr.length];
-        int keyIndex = 0;
+        char[] keyword = key.toCharArray();
+        char[] cipherText = codedMessage.toCharArray();
+        char[] decipheredMessage = new char[cipherText.length];
 
-        for (int i = 0; i < textArr.length; i++) {
-            for (int j = 0; j < arr.length; j++) {
-                int Index1 = linearSearch(arr[0], keyWord[keyIndex]);
-                int Index2 = linearSearch(arr[Index1], textArr[i]);
+        for (int i = 0; i < cipherText.length; i++) {
+            int keyIndex = linearSearch(arr[0], keyword[i % keyword.length]);
+            int colNum = linearSearch(arr[keyIndex], cipherText[i]);
+            decipheredMessage[i] = arr[0][colNum];
 
-                n[i] = arr[0][Index2];
-                keyIndex++;
-                if (keyIndex > keyWord.length -1) {
-                    keyIndex = 0;
-                }
-
-            }
         }
-        return n;
+
+        return decipheredMessage;
     }
 }//end class
-
