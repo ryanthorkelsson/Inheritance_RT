@@ -88,11 +88,6 @@ public class As1_Bingo {
 
             }//while
 
-
-
-
-
-
         }//run
 
         public static int[] generateArray(int length, int min, int max){

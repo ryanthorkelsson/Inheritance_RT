@@ -12,13 +12,13 @@ public class As5_Vigenere {
 
         System.out.println("Please enter an encrypted message");
         String encrypted = Library.input.nextLine();
-        Library.input.nextLine();
+
 
 
         printSquare(vigenere);
 
         System.out.println("The Decrypted message is:");
-        System.out.println(decrypt(encrypted,vigenere,key));
+        System.out.println(decrypt(encrypted, vigenere, key));
 
 //        System.out.println(decrypt("OGOGTSEYNTVCKA",vigenere));
 //        System.out.println(decrypt("XWBGIEGGJILJHJOVKARNKKCAADCFEAQU",vigenere));
@@ -68,29 +68,27 @@ public class As5_Vigenere {
     }//getChar
 
 
-    public static char[] decrypt(String cipherText, char[][] arr,String key) {
+    public static char[] decrypt(String cipherText, char[][] arr, String key) {
 
         char[] keyWord = key.toCharArray();
         char[] textArr = cipherText.toCharArray();
         char[] n = new char[textArr.length];
-        int keyIndex =0;
+        int keyIndex = 0;
 
         for (int i = 0; i < textArr.length; i++) {
             for (int j = 0; j < arr.length; j++) {
-                int Index1 = linearSearch(arr[0],keyWord[keyIndex]);
-                int Index2 = linearSearch(arr[Index1],textArr[i]);
+                int Index1 = linearSearch(arr[0], keyWord[keyIndex]);
+                int Index2 = linearSearch(arr[Index1], textArr[i]);
 
                 n[i] = arr[0][Index2];
-
-                keyIndex ++;
-                if(keyIndex >4){
-                    keyIndex =0;
+                keyIndex++;
+                if (keyIndex > keyWord.length -1) {
+                    keyIndex = 0;
                 }
+
             }
         }
-
         return n;
     }
-
 }//end class
 
