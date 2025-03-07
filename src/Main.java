@@ -1,4 +1,5 @@
 import Ex3_MusicFestival.Ex3_Main;
+import Family_Tree.FamilyTreeMain;
 import TwoD_Arrays.*;
 
 public class Main {
@@ -13,7 +14,8 @@ public class Main {
 //        Ex2_TicTacToe.run();
 //            Ex3_Sudoku.run();
 //        As1_Bingo.run();
-        As5_Vigenere.run();
+//        As5_Vigenere.run();
+        FamilyTreeMain.run();
 
     }
 
