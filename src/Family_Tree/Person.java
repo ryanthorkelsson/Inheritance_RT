@@ -20,7 +20,9 @@ public class Person {
     }
 
 
-
+    public void printPerson(){
+        System.out.println("Name: " + name + "| Country: " + country);
+    }
 
 
 }//class
