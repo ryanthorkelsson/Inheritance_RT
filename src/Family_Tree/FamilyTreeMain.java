@@ -2,6 +2,8 @@ package Family_Tree;
 
 
 
+import TwoD_Arrays.Library;
+
 import java.util.ArrayList;
 
 public class FamilyTreeMain {
@@ -38,7 +40,11 @@ public class FamilyTreeMain {
 //        printFamily(person1);
         System.out.println(countFamily(person1));
 //        printCanadians(person1);
-        printFromHere("Ryan",person1);
+
+        System.out.println();
+        System.out.println("Where would you like to print from?");
+        String person = Library.input.nextLine();
+        printFromHere(person,person1);
 
 
 
@@ -76,21 +82,21 @@ public class FamilyTreeMain {
     }
 
     public static void printFromHere (String n,Person ptemp){
-        Person p = findPerson(n,ptemp);
-        printFamily(p);
-    }
+        int numchildren = ptemp.children.size() -1;
 
-    public static Person findPerson(String n, Person p){
-        for (int i = 0; i < p.children.size(); i++) {
-            if(p.children.get(i).name.equalsIgnoreCase(n)){
-                return p.children.get(i);
+        for (int i = 0; i <= numchildren; i++) {
+            if(ptemp.children.get(i).name.equalsIgnoreCase(n)){
+                printFamily(ptemp.children.get(i));
             }
-            findPerson(n,p.children.get(i));
+            else{
+                printFromHere(n,ptemp.children.get(i));
+            }
         }
 
 
-        return null;
+
     }
+
 
 
 
