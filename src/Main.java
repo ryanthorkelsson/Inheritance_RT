@@ -1,3 +1,4 @@
+import AdvancedStringMethods.As1_Main;
 import Ex3_MusicFestival.Ex3_Main;
 import Family_Tree.FamilyTreeMain;
 import TwoD_Arrays.*;
@@ -15,7 +16,8 @@ public class Main {
 //            Ex3_Sudoku.run();
 //        As1_Bingo.run();
 //        As5_Vigenere.run();
-        FamilyTreeMain.run();
+//        FamilyTreeMain.run();
+        As1_Main.run();
 
     }
 
