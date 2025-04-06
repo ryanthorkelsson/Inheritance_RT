@@ -36,16 +36,24 @@ public class Message {
 
     public boolean scanWarning (String keyWord){
         int length = keyWord.length();
-        String start = warning.substring(0,length) + " ";
-        String end = " " + warning.substring(warning.length()-length);
-        if(start.equals(keyWord + " ")){
+        if(length > warning.length()){
+            return false;
+        }
+        if(length < warning.length()){
+            if(warning.substring(0,length +1).equals(keyWord + " ")){
+                return true;
+            }
+            if(warning.substring(warning.length()-length -1).equals(" " + keyWord)){
+                return true;
+            }
+        }
+        if(warning.contains(" " + keyWord + " ")){
             return true;
         }
-        else if(end.equals(" " + keyWord)){
+        if(warning.equals(keyWord)){
             return true;
         }
-//        else if(){}
-//        else if(){}
+
 
 
         return false;

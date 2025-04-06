@@ -1,7 +1,5 @@
 package Ex3_MusicFestival;
 
-import com.sun.tools.javac.Main;
-
 import java.util.ArrayList;
 
 public class Ex3_Main {

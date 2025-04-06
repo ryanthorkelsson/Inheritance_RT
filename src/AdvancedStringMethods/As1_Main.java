@@ -29,6 +29,7 @@ public class As1_Main {
 
 
 
+
         System.out.println("Assign 1 Network Messages");
 
         while (true) {
@@ -53,6 +54,13 @@ public class As1_Main {
                 }
 
             } else if (option == 3) {
+                System.out.println("What would you like to scan for?");
+                String keyWord = Library.input.nextLine();
+                System.out.println();
+                System.out.println("Warning-----Scan result for " + keyWord);
+                for (int i = 0; i < allMessages.size(); i++) {
+                    System.out.println(allMessages.get(i).getWarning() + "-----" + allMessages.get(i).scanWarning(keyWord));
+                }
 
             } else if (option == 4) {
                 break;
