@@ -19,6 +19,7 @@ public class FamilyTreeMain {
         person1.addChild(new Person("Jill","Canada"));
         person1.addChild(new Person("Bobette","Japan"));
 
+
         //gen 3
         person1.children.get(0).addChild(new Person("Zain","Japan"));
         person1.children.get(2).addChild(new Person("Bob III", "Belize"));
@@ -37,16 +38,18 @@ public class FamilyTreeMain {
 
         person1.children.get(1).children.get(0).children.get(0).addChild(new Person ("John","Sweden"));
 
-//        printFamily(person1);
+        //testing
+        person1.addChild(new Person("Hans", "Canada")); // 4th child
+        person1.children.get(3).addChild(new Person("Alan", "England")); // Hans' child
+
+        printFamily(person1);
         System.out.println(countFamily(person1));
-//        printCanadians(person1);
+        printCanadians(person1);
 
         System.out.println();
         System.out.println("Where would you like to print from?");
         String person = Library.input.nextLine();
         printFromHere(person,person1);
-
-
 
     }//run
 
@@ -92,8 +95,6 @@ public class FamilyTreeMain {
                 printFromHere(n,ptemp.children.get(i));
             }
         }
-
-
 
     }
 

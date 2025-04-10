@@ -67,6 +67,7 @@ public class As1_Main {
             } else {
                 System.out.println("That is not an available option");
             }
+            System.out.println();
             System.out.println("Logging out. Good Bye.");        }//while
 
     }//main
